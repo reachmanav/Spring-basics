@@ -1,0 +1,12 @@
+package org.manav.javabrains;
+
+public class Triangle {
+
+	private Point pointA;
+	private Point pointB;
+	private Point pointC;
+	
+	public void draw ()  {
+		System.out.println("Triangle drawn:"+getType() + "height: "+getHeight());
+	}
+}

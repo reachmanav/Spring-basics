@@ -1,0 +1,3 @@
+greeting.message=Hello!
+drawing.circle.message=Drawing Circle!
+drawing.point.message=PointA: {0}, {1}

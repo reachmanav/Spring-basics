@@ -1,0 +1,11 @@
+package org.manav.javabrains;
+
+public class Triangle {
+
+	private String type;
+	
+	
+	public void draw ()  {
+		System.out.println("Triangle drawn");
+	}
+}

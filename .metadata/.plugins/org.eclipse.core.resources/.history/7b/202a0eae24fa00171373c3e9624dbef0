@@ -1,0 +1,8 @@
+package org.manav.javabrains;
+
+public class Circle {
+
+	private Point center; 
+	
+	
+}

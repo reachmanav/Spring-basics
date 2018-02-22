@@ -1,0 +1,7 @@
+package org.manav.javabrains;
+
+import org.springframework.context.ApplicationListener;
+
+public class MyEventListener implements ApplicationListener<E> {
+
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+
+	<!-- <bean id="triangle" class="org.manav.javabrains.Triangle">
+		 <property name="type" value="Equilateral"></property>
+		 <constructor-arg type="java.lang.String" value="Equilateral" />
+		 <constructor-arg type="java.lang.String" value="20" />
+		 <constructor-arg index="0" value="Equilateral" />
+		 <constructor-arg index="1"  value="20" />
+	</bean> -->
+	
+	<bean id="triangle" class="org.manav.javabrains.Triangle" autowire="byName" init-method="myInit" destroy-method="myDestroy">		
+	</bean>
+	
+	
+<!-- 	The beow is for marking the ID of class "circle" -->
+	<context:component-scan base-package="org.manav.javabrains" />
+	
+<!-- 	<bean id="circle" class="org.manav.javabrains.Circle">
+		<property name="center" ref="pointA"></property>
+	</bean> -->
+	
+	<bean id="messageSourceD" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>AppMessages</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+	<bean id="pointA" class="org.manav.javabrains.Point">
+		<qualifier value="circleCenter" />
+		<property name="x" value="${pointA.x}" />
+		<property name="y" value="${pointA.y}" />
+	</bean>
+	
+<!-- 	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+	 -->
+	
+	<context:annotation-config />
+	
+	<bean id="pointB" class="org.manav.javabrains.Point">
+		<property name="x" value="-20" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<bean id="pointC" class="org.manav.javabrains.Point">
+		<property name="x" value="0" />
+		<property name="y" value="20" />
+	</bean>
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
+		<property name="location" value="pointsconfig.properties" />				
+	</bean>
+	
+<!-- 	<bean  class="org.manav.javabrains.DisplayNameBeanPostProcessor2" />   -->
+<!-- 	<bean class="org.manav.javabrains.DisplayNameBeanPostProcessor" /> -->
+	
+
+ 		<alias name="triangle" alias="triangle-alias"/>
+	
+	
+</beans>

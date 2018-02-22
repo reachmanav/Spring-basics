@@ -1,0 +1,16 @@
+package org.manav.javabrains;
+
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ApplicationListener;
+
+@Component
+public class MyEventListener implements ApplicationListener {
+
+
+	@Override
+	public void onApplicationEvent(ApplicationEvent event) {
+		System.out.println("onApplicationEvent has been called: " + event.toString() );
+		
+	}
+
+}

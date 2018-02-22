@@ -1,0 +1,21 @@
+package org.manav.javabrains;
+
+import java.util.List;
+
+public class Triangle {
+
+	private Point pointA;
+	private Point pointB;
+	private Point pointC;
+	
+	
+	
+
+
+	public void draw ()  {
+		
+		for (Point point: points)  {
+			System.out.println("Point: "+point.getX() + "," + point.getY());
+		}
+	}
+}
